@@ -1,11 +1,13 @@
 <h1>Works</h1>
 <p>Phase 7</p>
 <script>
+    var url;
     function urlInData(id_,json_){
         var found = false
         json_.forEach(element => {
             if(element["id"]==id_){
                 console.log("found");
+                url = element["url"]
                 found = true;
             }
            
@@ -18,6 +20,7 @@
         if(urlInData(url_,json_)){
             if(direct_=="true"){
                 console.log("Direct redirection");
+                window.location = url;
             }else if(direct_=="false"){
                 console.log("Accept redirection");
             }else{
