@@ -2,13 +2,15 @@
 <p>Phase 7</p>
 <script>
     function urlInData(id_,json_){
+        var found = false
         json_.forEach(element => {
             if(element["id"]==id_){
                 console.log("found");
-                return true
+                found = true;
             }
            
         });
+        return found
     }
 
     function runURL(json_,url_,direct_){
