@@ -1,3 +1,7 @@
+body {
+  background-color: darkslategray;
+}
+
 .loader {
     position: relative;
     width: 100px;
