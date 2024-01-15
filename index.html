@@ -5,6 +5,8 @@
     .then((response) => response.json())
     .then((json) => console.log(json));
     var query = window.location.search.substring(1);
-    var vars = query.split("&");
-    console.log(vars)
+    var url, direct = query.split("&");
+    
+    console.log(url)
+    console.log(direct)
 </script>
