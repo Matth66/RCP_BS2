@@ -2,48 +2,49 @@ body {
   background-color: darkslategray;
 }
 
+/* HTML: <div class="loader"></div> */
 .loader {
-  width: 48px;
-  height: 48px;
-  display: block;
-  margin:15px auto;
+  width: 65px;
+  aspect-ratio: 1;
   position: relative;
-  color: #FFF;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
 }
-.loader::after,
-.loader::before {
-  content: '';  
-  box-sizing: border-box;
+.loader:before,
+.loader:after {
+  content: "";
   position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 0;
-  background-color: #FFF;
-  border-radius: 50%;
-  animation: scale50 1s infinite ease-in-out;
+  border-radius: 50px;
+  box-shadow: 0 0 0 3px inset #fff;
+  animation: l4 2.5s infinite;
 }
-.loader::before {
-  top: auto;
-  bottom: 0;
-  background-color: #FF3D00;
-  animation-delay: 0.5s;
+.loader:after {
+  animation-delay: -1.25s;
 }
-
-@keyframes rotation {
+@keyframes l4 {
   0% {
-    transform: rotate(0deg);
+    inset: 0 35px 35px 0;
   }
-  100% {
-    transform: rotate(360deg);
+  12.5% {
+    inset: 0 35px 0 0;
   }
-} 
-@keyframes scale50 {
-  0%, 100% {
-    transform: scale(0);
+  25% {
+    inset: 35px 35px 0 0;
+  }
+  37.5% {
+    inset: 35px 0 0 0;
   }
   50% {
-    transform: scale(1);
+    inset: 35px 0 0 35px;
   }
-} 
+  62.5% {
+    inset: 0 0 0 35px;
+  }
+  75% {
+    inset: 0 0 35px 35px;
+  }
+  87.5% {
+    inset: 0 0 35px 0;
+  }
+  100% {
+    inset: 0 35px 35px 0;
+  }
+}
